@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cvs.mapper.PosMapper">
+	
+	<!--  -->
+	<!-- 상품 바코드 등록 -->
+	<select id="inputMdlist" resultType="com.cvs.model.Md_infoVO">
+   
+    select barcode_no,md_name, price from 
+    md_info join md_price on md_info.md_no  = md_price.md_no  
+    where barcode_no=#{barcode_no};                        
+	
+	</select>
+	
+	<!-- 결제 -->
+	<insert id="Payment">
+ 	<![CDATA[
+		 insert into  pos_board( store_no, list_no , barcode_no, md_ea, sale_date)
+			   values(1,#{list_no},#{barcode_no},#{md_ea}, sysdate());
+                              
+ 	]]>
+
+	</insert>
+	
+
+</mapper>
