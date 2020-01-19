@@ -1,9 +1,12 @@
 package com.cvs.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cvs.mapper.PosMapper;
+import com.cvs.model.Auto_incrementVO;
 import com.cvs.model.Md_infoVO;
 import com.cvs.model.Pos_boardVO;
 
@@ -26,8 +29,19 @@ public class PosServiceImpl implements PosService{
 		
 		pm.Payment(pvo);
 
-	 
 		 		
+	}
+
+	@Override
+	public List<Pos_boardVO> posPaymentList(Pos_boardVO pvo) throws Exception {
+
+		return pm.posPaymentList(pvo);
+	}
+
+	@Override
+	public void increment(Auto_incrementVO aivo) throws Exception {
+		pm.increment(aivo);
+		
 	}
 
 }

@@ -6,9 +6,17 @@ public class Pos_boardVO {
 	private int barcode_no;
 	private int md_ea;
 	private String sale_date;
+	private String sale_time;
 	private String update_date;
+
 	
 	
+	public String getSale_time() {
+		return sale_time;
+	}
+	public void setSale_time(String sale_time) {
+		this.sale_time = sale_time;
+	}
 	public int getMd_ea() {
 		return md_ea;
 	}

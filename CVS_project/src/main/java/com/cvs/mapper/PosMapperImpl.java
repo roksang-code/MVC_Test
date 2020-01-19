@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.cvs.model.Auto_incrementVO;
 import com.cvs.model.Md_infoVO;
 import com.cvs.model.Pos_boardVO;
 
@@ -31,6 +32,22 @@ public class PosMapperImpl implements PosMapper{
 	public void Payment(Pos_boardVO pvo) throws Exception {
 		
 		session.insert(namespace+".Payment",pvo);
+		
+	}
+
+
+	@Override
+	public List<Pos_boardVO> posPaymentList(Pos_boardVO pvo) throws Exception {
+		
+		List<Pos_boardVO> posPaymentList = session.selectList(namespace+".posPaymentList");
+		
+		return posPaymentList;
+	}
+
+
+	@Override
+	public void increment(Auto_incrementVO aivo) throws Exception {
+		session.insert(namespace+".increment",aivo);
 		
 	}
 

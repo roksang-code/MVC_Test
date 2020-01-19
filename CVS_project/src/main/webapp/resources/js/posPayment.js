@@ -12,7 +12,6 @@ $(document).ready(function() {
 	var ead=0;
 	var totalpr = 0;
 	 var classname ="";
-	 var list_no =0;
 	$("#md_update").on("click", function() {
 		
 		var barcode_no = $("#barcode_no").val();
@@ -87,7 +86,8 @@ $(document).ready(function() {
 		
 		if(inputPr>totalPr){
 			$(".listOutputPr").html(inputPr-totalPr);	//받은돈 - 합계
-			
+			$(".listPaymentPr").html(0);	//받을 금액
+
 
 			console.log(inputPr-totalPr);	
 			
@@ -95,6 +95,7 @@ $(document).ready(function() {
 
 		}else{
 			$(".listOutputPr").html(0);	//거스름돈 = 받은돈 - 합계
+			if(isNaN(inputPr)==false)
 			$(".listPaymentPr").html(totalPr-inputPr);	//받을 금액
 
 		}
@@ -166,14 +167,11 @@ $(document).ready(function() {
 				data : JSON.stringify({
 					barcode_no : barcode_no,
 					md_ea : md_ea,
-					list_no : list_no
 				
 				
 				}),
 
 				success : function(data) {
-					list_no++
-					$(location).attr('href', 'posPayment');
 					
 				},
 				error : function(err) {
@@ -188,6 +186,33 @@ $(document).ready(function() {
 			
 		}//for문 끝
 		
+		$.ajax({
+
+			type : "post",
+			url : "Auto_increment",
+			contentType : "application/json;charset=utf-8",
+			headers : {
+				"Content-Type" : "application/json",
+				"X-HTTP-Method-Override" : "POST"
+			},
+			dataType : "text",
+			data : JSON.stringify({
+				list_no : 1
+			
+			
+			}),
+
+			success : function(data) {
+				$(location).attr('href', 'posPayment');
+
+			},
+			error : function(err) {
+
+				alert("등록에 실패했습니다.");
+			}
+   
+
+		});
 		
 	 });//현금결제
 	
