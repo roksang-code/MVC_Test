@@ -103,7 +103,7 @@
 					<td>0</td><td>00</td><td>취소</td><td>수량변경</td>
 				</tr>
 				<tr>
-					<td>천원</td><td>오천원</td><td>만원</td><td class="paymentList">판매내역</td>
+					<td>천원</td><td>오천원</td><td>만원</td>  <td class="paymentList">판매내역<input type="submit" formaction="posPaymentList"> </td>
 				</tr>
 				<tr class="payment">
 					<td colspan="2"  >현금</td>

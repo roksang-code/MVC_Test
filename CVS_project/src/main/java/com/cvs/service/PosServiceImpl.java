@@ -33,9 +33,9 @@ public class PosServiceImpl implements PosService{
 	}
 
 	@Override
-	public List<Pos_boardVO> posPaymentList(Pos_boardVO pvo) throws Exception {
+	public List<Pos_boardVO> PaymentList(Pos_boardVO pvo) throws Exception {
 
-		return pm.posPaymentList(pvo);
+		return pm.PaymentList(pvo);
 	}
 
 	@Override

@@ -11,7 +11,7 @@ public interface PosMapper {
 	
 	public void Payment(Pos_boardVO pvo) throws Exception;
 
-	public List<Pos_boardVO> posPaymentList(Pos_boardVO pvo) throws Exception;
+	public List<Pos_boardVO> PaymentList(Pos_boardVO pvo) throws Exception;
 
 	public void increment(Auto_incrementVO aivo) throws Exception;
 

@@ -37,11 +37,11 @@ public class PosMapperImpl implements PosMapper{
 
 
 	@Override
-	public List<Pos_boardVO> posPaymentList(Pos_boardVO pvo) throws Exception {
+	public List<Pos_boardVO> PaymentList(Pos_boardVO pvo) throws Exception {
 		
-		List<Pos_boardVO> posPaymentList = session.selectList(namespace+".posPaymentList");
+		List<Pos_boardVO> PaymentList = session.selectList(namespace+".PaymentList");
 		
-		return posPaymentList;
+		return PaymentList;
 	}
 
 

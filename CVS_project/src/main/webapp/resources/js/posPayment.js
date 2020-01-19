@@ -139,7 +139,8 @@ $(document).ready(function() {
 	
 	$(".paymentList").on("click",function(){
 		
-		$(location).attr('href', 'posPaymentList');
+		//$(location).attr('href', 'posPaymentList');
+
 
 
 		

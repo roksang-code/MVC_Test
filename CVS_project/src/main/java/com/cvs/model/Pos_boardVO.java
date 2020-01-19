@@ -3,14 +3,42 @@ package com.cvs.model;
 public class Pos_boardVO {
 	private int store_no;
 	private int list_no;
+	private int md_no;
 	private int barcode_no;
 	private int md_ea;
+	private int md_name;
+	private int price;
+	private int total_price;	
 	private String sale_date;
 	private String sale_time;
 	private String update_date;
 
 	
 	
+	public int getMd_no() {
+		return md_no;
+	}
+	public void setMd_no(int md_no) {
+		this.md_no = md_no;
+	}
+	public int getMd_name() {
+		return md_name;
+	}
+	public void setMd_name(int md_name) {
+		this.md_name = md_name;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getTotal_price() {
+		return total_price;
+	}
+	public void setTotal_price(int total_price) {
+		this.total_price = total_price;
+	}
 	public String getSale_time() {
 		return sale_time;
 	}

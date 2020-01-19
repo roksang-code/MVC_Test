@@ -33,12 +33,20 @@ public class PosController {
 		return "pos/posPayment";
 	}
 	
-	@RequestMapping(value = "/posPaymentList", method = RequestMethod.GET)//pos화면
+	@RequestMapping(value = "/posPaymentList", method = RequestMethod.GET)//매출 리스트 화면
 	public String posPaymentListGet() throws Exception {
 
 		logger.info("posPaymentList get...");
-
+		
 		return "pos/posPaymentList";
+	}
+	
+	@RequestMapping(value = "/posPaymentList", method = RequestMethod.POST)//매출 리스트 화면
+	public void posPaymentListPost(@RequestBody Pos_boardVO pvo, Model model) throws Exception {
+
+		logger.info("posPaymentList post...");
+
+		model.addAttribute("PaymentList", pservice.PaymentList(pvo)); 
 	}
 
 	@ResponseBody
